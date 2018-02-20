@@ -1,6 +1,13 @@
 DEFAULT_AUTHOR = "Sebastián Aedo – http://saedo.me"
 
 def set_title(ax, title, subtitle, caption='', author=DEFAULT_AUTHOR):
+    """ Custom title format
+
+    @ax: ax object.
+    @title, @subtitle: self-explained
+    @caption (optional): write text below the plot.
+    @author: author text.
+    """
     scale = 8/ax.figure.get_figheight()
 
     delta = 0
