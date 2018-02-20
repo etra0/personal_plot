@@ -21,6 +21,6 @@ pp.set_title(ax, "Title", "Subtitle", "Optional caption", "author")
 pp.savefig(fig, "result.png")
 ```
 
-# Image Example:
+## Result
 
-![](https://user-images.githubusercontent.com/19335821/36036165-e39a32a2-0d97-11e8-8827-b1ad45a78961.png)
+![](https://github.com/etra0/personal_plot/raw/master/example/result.png)
