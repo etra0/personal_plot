@@ -1,3 +1,4 @@
+import matplotlib as mpl
 DEFAULT_AUTHOR = "Sebastián Aedo – http://saedo.me"
 
 def set_title(ax, title, subtitle, caption='', author=DEFAULT_AUTHOR):
@@ -37,3 +38,20 @@ def set_title(ax, title, subtitle, caption='', author=DEFAULT_AUTHOR):
 
 def savefig(fig, filename, dpi=300):
     fig.savefig(filename, dpi=dpi, bbox_inches='tight')
+
+def set():
+    mpl.pyplot.style.use('default')
+    dict_config = {
+        "lines.linewidth" : 3,     # line width in points
+        "font.family" : "Open Sans",
+        "axes.grid" : True,   # display grid or not
+        "axes.axisbelow" : True,  # draw axis gridlines and ticks below
+        "axes.spines.left" : False,
+        "axes.spines.bottom" : False,
+        "axes.spines.top" : False,
+        "axes.spines.right" : False,
+        "grid.linewidth" :   2,       # in points
+        "grid.alpha" :   0.1       # transparency, between 0.0 and 1.0
+    }
+    for key in dict_config:
+        mpl.pyplot.rcParams[key] = dict_config[key]
