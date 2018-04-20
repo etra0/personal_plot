@@ -1,21 +1,20 @@
 import matplotlib as mpl
-DEFAULT_AUTHOR = "Sebastián Aedo – http://saedo.me"
 
-def set_title(ax, title, subtitle, caption='', author=DEFAULT_AUTHOR):
+def set_title(ax, title, subtitle='', caption='', author=''):
     """ Custom title format
 
     @ax: ax object.
-    @title, @subtitle: self-explained
+    @title: self-explained.
+    @subtitle (optional): self-explained.
     @caption (optional): write text below the plot.
-    @author: author text.
+    @author (optional): author text.
     """
+
     scale = 8/ax.figure.get_figheight()
 
-    delta = 0
-    va = 'top'
-    if subtitle != "":
-        delta = 0.01
-        va = 'bottom'
+    # va is vertical alignment.
+    # it needs to be different if the subtitle isn't set.
+    delta, va = (0, 'top') if not subtitle else (0.01, 'bottom')
 
     # bigger title
     ax.text(0, 1 + (.05 + delta)*scale,
